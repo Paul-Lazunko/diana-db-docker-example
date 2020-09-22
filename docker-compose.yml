@@ -1,0 +1,18 @@
+version: '3.7'
+
+networks:
+  diana-db-ntw:
+    driver: bridge
+services:
+  dianaDB:
+    container_name: diana
+    hostname: diana
+    domainname: diana
+    image: pashaman/diana-db:latest
+    restart: on-failure
+    env_file:
+      - .env
+    ports:
+      - 34567:34567
+    networks:
+      - diana-db-ntw
