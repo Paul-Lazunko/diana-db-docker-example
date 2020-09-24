@@ -16,3 +16,6 @@ services:
       - 34567:34567
     networks:
       - diana-db-ntw
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
